@@ -3,7 +3,7 @@ let Mock = require('mockjs'); //引入mockjs
 let Random = Mock.Random; //引入mock随机属性的函数
 
 //给当前路由添加前缀(相当于/index/list)
-router.prefix('/index')
+router.prefix('/docutor')
 
 router.get('/', async (ctx, next) => {
 	await ctx.render('index', {
@@ -25,7 +25,6 @@ router.post('/string', async (ctx, next) => {
 })
 
 router.post('/singlePatientInfo',async (ctx,next)=>{
-	console.log('ctx.request',ctx.request.body)
 	const id = ctx.request.body.id;
 	ctx.body = await Mock.mock({
 		'result|1':[{
