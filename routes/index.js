@@ -24,6 +24,25 @@ router.post('/string', async (ctx, next) => {
 	})
 })
 
+router.post('/singlePatientInfo',async (ctx,next)=>{
+	console.log('ctx.request',ctx.request.body)
+	const id = ctx.request.body.id;
+	ctx.body = await Mock.mock({
+		'result|1':[{
+			'name':Random.cname(),
+			'idCard':'45636856397848',
+			'sex':'男',
+			'marryStatus':'已婚',
+			'nation':'民族',
+			'work':'自由職業',
+			'boold':'A',
+			'rhBoold':'未知',
+			'drugAllergy':'無',
+			"phone":'13664644444',
+			"location":'广西南宁市青秀区东葛路'
+		}]
+	})
+})
 router.get('/json', async (ctx, next) => {
 	ctx.body = {
 		title: 'koa2 json'
