@@ -42,6 +42,21 @@ router.post('/singlePatientInfo',async (ctx,next)=>{
 		}]
 	})
 })
+
+router.post('/compositeSearch',async (ctx,next) => {
+	ctx.body = await Mock.mock({
+		'result|15-30':[{
+			id:'1',
+			name:'王五2',
+			sex:'男',
+			idcard:'452226199840125402',
+			nation:'壮',
+			phone:'18877495623',
+			doctor:'李科',
+		}]
+	})
+})
+
 router.get('/json', async (ctx, next) => {
 	ctx.body = {
 		title: 'koa2 json'
