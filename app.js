@@ -12,9 +12,16 @@ const users = require('./routes/users')
 
 
 console.log('develop分支')
+
 function add(){
 	console.log('添加好友');
 }
+
+function addFriend(){
+	console.log('自己的add方法')
+}
+
+
 
 // error handler
 onerror(app)
